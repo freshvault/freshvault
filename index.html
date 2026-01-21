@@ -9,35 +9,76 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body {
-      min-height: 100vh;
-      background: linear-gradient(
-          rgba(24, 94, 136, 0.85),
-          rgba(24, 94, 136, 0.85)
-        ),
-        url("assets/logistics-bg.jpg") center/cover no-repeat;
-      color: #fff;
+    :root{
+      --fva-blue: #1C69A0;
+      --fva-green:#418937;
+      --fva-overlay: rgba(8,45,74,.78);
     }
-    .badge-soft {
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      color: #fff;
+    body{
+      min-height:100vh;
+      background:
+        linear-gradient(var(--fva-overlay), var(--fva-overlay)),
+        url("assets/logistics-bg.jpg") center/cover no-repeat;
+      color:#fff;
+    }
+    .badge-soft{
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      color:#fff;
+      font-weight:600;
+    }
+    .logo-wrap{
+      width:120px;height:120px;
+      background: rgba(255,255,255,.92);
+      border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      margin: 0 auto 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .logo-wrap img{ width:92px; height:92px; object-fit:contain; }
+    .tagline{
+      font-size: .98rem;
+      letter-spacing: .2px;
+      opacity:.95;
+    }
+    .contact-pill{
+      display:inline-flex;
+      gap:.6rem;
+      align-items:center;
+      padding:.6rem .9rem;
+      border-radius:999px;
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(6px);
+      color:#fff;
+      text-decoration:none;
+      margin:.25rem;
+    }
+    .contact-pill:hover{ background: rgba(0,0,0,.28); color:#fff; }
+    .fineprint{
+      max-width: 900px;
+      margin: 0 auto;
+      opacity:.75;
+      font-size:.9rem;
     }
   </style>
 </head>
 
 <body class="d-flex align-items-center">
-  <div class="container text-center">
-    <img src="assets/logo-round.png" alt="Fresh Vault Agro" style="width:90px;height:90px;" class="mb-3">
+  <div class="container text-center py-5">
+
+    <!-- Logo (high-contrast) -->
+    <div class="logo-wrap" aria-label="Fresh Vault Agro logo">
+      <img src="assets/logo-round.png" alt="Fresh Vault Agro">
+    </div>
+    <div class="tagline mb-3">Preserving Freshness Naturally</div>
 
     <h1 class="fw-bold mb-2">Fresh Vault Agro</h1>
-    <p class="lead mb-3">
-      Exporter & Supplier of Indian Agro Commodities
-    </p>
+    <p class="lead mb-3">Exporter &amp; Supplier of Indian Agro Commodities</p>
 
     <p class="mb-4">
-      Our website is currently under development.<br>
-      We are preparing to launch our digital presence for global and domestic trade enquiries.
+      Our website is currently under development.<br class="d-none d-md-block">
+      For trade enquiries (export &amp; domestic), please contact us via email or WhatsApp.
     </p>
 
     <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
@@ -47,21 +88,20 @@
       <span class="badge badge-soft px-3 py-2">Lab Test Support</span>
     </div>
 
-    <p class="mb-1">
-      📧 <a href="mailto:info@freshvaultagro.com" class="text-white text-decoration-underline">
-        info@freshvaultagro.com
+    <div class="mb-4">
+      <a class="contact-pill" href="mailto:info@freshvaultagro.com">
+        <span>📧</span><span>info@freshvaultagro.com</span>
       </a>
-    </p>
-    <p class="mb-4">
-      💬 <a href="https://wa.me/919419004451" class="text-white text-decoration-underline">
-        WhatsApp: +91 94190 04451
+      <a class="contact-pill" href="https://wa.me/919419004451">
+        <span>💬</span><span>WhatsApp: +91 94190 04451</span>
       </a>
-    </p>
+    </div>
 
-    <small class="text-white-50">
-      Fresh Vault Agro operates as a trade, marketing, and logistics entity.<br>
-      Products may be supplied unbranded or packed under buyer’s private label.
-    </small>
+    <div class="fineprint">
+      Fresh Vault Agro operates strictly as a trade, marketing, and logistics entity.
+      Products may be supplied unbranded or packed under buyer’s private label, as per agreement and applicable regulations.
+    </div>
+
   </div>
 </body>
 </html>
